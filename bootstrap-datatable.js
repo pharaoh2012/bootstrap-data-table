@@ -101,7 +101,7 @@
         if(o.url !== "") {
           $.ajax({
               url: o.url
-            , type: "POST"
+            , type: "GET"
             , dataType: "json"
             , data: $.extend({}, o.post, {
                   currentPage: o.currentPage
