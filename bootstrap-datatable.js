@@ -1038,7 +1038,7 @@
 
     $.ajax({
         url: o.url
-      , type: "POST"
+      , type: "GET"
       , dataType: "json"
       , data:  $.extend({}, o.post, {
             action: "save-columns"
@@ -1072,8 +1072,8 @@
   * =========================== */
 
   $.fn.datatable = function ( options ) {
-    $.fn.datatable.init.call(this, options, DataTable, 'datatable');
-    return this;
+    return $.fn.datatable.init.call(this, options, DataTable, 'datatable');
+    //return this;
   };
 
   $.fn.datatable.init = function ( options, Constructor, name ) {
