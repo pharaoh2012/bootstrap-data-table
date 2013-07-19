@@ -101,7 +101,7 @@
         if(o.url !== "") {
           $.ajax({
               url: o.url
-            , type: "GET"
+            , type: o.method
             , dataType: "json"
             , data: $.extend({}, o.post, {
                   currentPage: o.currentPage
@@ -1038,7 +1038,7 @@
 
     $.ajax({
         url: o.url
-      , type: "GET"
+      , type: o.method
       , dataType: "json"
       , data:  $.extend({}, o.post, {
             action: "save-columns"
@@ -1141,6 +1141,7 @@
   , allowSaveColumns: false
     , toggleColumns: true
     , url: ''
+    , method: 'POST'
     , columns: []
     , ascending: '<i class="icon-chevron-up"></i>'
     , descending: '<i class="icon-chevron-down"></i>'

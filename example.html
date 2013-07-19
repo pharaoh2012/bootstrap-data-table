@@ -61,6 +61,7 @@
 $("#table-container_1").datatable({
     perPage: 5
   , url: 'example-data.json'
+  , method :"GET"
   , showPagination: true
   // , showFilter: true
   // , filterModal: $("#table-container_1-filter")
@@ -105,6 +106,7 @@ $("#table-container_1").datatable({
 $("#table-container_2").datatable({
     perPage: 5
   , allowTableinfo: false
+  , method: "GET"
   , url: 'example-data.json'
   , showPagination: true
   , showFilter: true
