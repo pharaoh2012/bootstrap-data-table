@@ -465,7 +465,7 @@
         $cell
           .data("column_properties", o.columns[column])
           .addClass(classname)
-          .text(o.columns[column].title);
+          .html(o.columns[column].title);
 
         if(o.columns[column].css) $cell.css(o.columns[column].css);
 
