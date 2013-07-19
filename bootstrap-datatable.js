@@ -123,8 +123,8 @@
                 $e.empty();
 
                 // set the sort and filter configuration
-                o.sort = res.sort;
-                o.filter = res.filter;
+                o.sort = res.sort || [];
+                o.filter = res.filter || [];
                 o.totalRows = res.totalRows;
 
                 // set the current page if we're forcing it from the server
@@ -305,18 +305,19 @@
               $cell.click(this, this.sort)
                 .css({'cursor':'pointer'});
 
-            for(var i = 0; i < o.sort.length; i++) {
-              if(o.sort[i][0] == colprop.field) {
-                if(o.sort[i][1] == "asc") {
-                  $cell.append($(o.ascending));
-                  colprop.sortOrder = "asc";
-                }
-                else if(o.sort[i][1] == "desc") {
-                  $cell.append($(o.descending));
-                  colprop.sortOrder = "desc";
+              for(var i = 0; i < o.sort.length; i++) {
+                if(o.sort[i][0] == colprop.field) {
+                  if(o.sort[i][1] == "asc") {
+                    $cell.append($(o.ascending));
+                    colprop.sortOrder = "asc";
+                  }
+                  else if(o.sort[i][1] == "desc") {
+                    $cell.append($(o.descending));
+                    colprop.sortOrder = "desc";
+                  }
                 }
               }
-            }
+
 
             row.append($cell);
             this.$header.append(row);
